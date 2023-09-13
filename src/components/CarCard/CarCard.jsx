@@ -1,21 +1,27 @@
-const CarCard = ({ adverts }) => {
+import sass from './CarCard.module.scss';
+
+const CarCard = ({ advert }) => {
+  //   console.log(advert);
   return (
     <li>
-      <img src={adverts.img} alt="" />
+      <div className={sass.imgWrapper}>
+        <img className={sass.img} src={advert.img} alt="" />
+      </div>
       <div>
-        <p>{`${adverts.make} ${adverts.model}, ${adverts.year}`}</p>
-        <p>{adverts.rentalPrice}</p>
+        <p>{`${advert.make} ${advert.model}, ${advert.year}`}</p>
+        <p>{advert.rentalPrice}</p>
       </div>
       <div>
         <p>Kiev</p>
         <p>Ukraine</p>
-        <p>{adverts.rentalCompany}</p>
+        <p>{advert.rentalCompany}</p>
         <p>Premium</p>
-        <p>{adverts.type}</p>
-        <p>{adverts.model}</p>
-        <p>{adverts.id}</p>
-        <p>{adverts.functionalities[0]}</p>
+        <p>{advert.type}</p>
+        <p>{advert.model}</p>
+        <p>{advert.id}</p>
+        <p>Power liftgate</p>
       </div>
+      <button>Learn more</button>
     </li>
   );
 };
